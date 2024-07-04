@@ -40,10 +40,10 @@ app.get("/", (req, res) => {
 //   res.json(result.rows);
 // });
 
-app.delete("/deleteFormData/:id", async (req, res) => {
-  const id = reqparams.id;
-  const result = await db.query(
-    ` DELETE FROM table_name WHERE id = $1 RETURNING *,`[id]
-  );
-  res.json(result.rows);
-});
+// app.delete("/deleteFormData/:id", async (req, res) => {
+//   const id = reqparams.id;
+//   const result = await db.query(
+//     ` DELETE FROM table_name WHERE id = $1 RETURNING *,`[id]
+//   );
+//   res.json(result.rows);
+// });
