@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+// import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+// import { useCallback } from "react";
+import { Routes, Route } from "react-router-dom";
 
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Posts from "./pages/Posts";
+import FormPage from "./pages/FormPage";
+
+//I need a list of shop upgrades for the user to buy
+
+//I need two global variables: one to store the cookie counter, one to store the cookies per second
+
+// stretch goal, fetch API upgrades, maybe make my own API?
+
+// const upgrades = [{}, {}];
+
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="main-page">
+      <Header></Header>
+      <main className="main-container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/userreviews" element={<Posts />} />
+          <Route path="/formpage" element={<FormPage />} />
+        </Routes>
+      </main>
+    </div>
+  );
 }
 
-export default App
+// const [clicks, setClicks] = useState(0);
+// const [cps, setCps] = useState(1);
+// const [clicked, setClicked] = useState(false);
+//   //   //I need a timer to track the biscuits, keeping an eye on the bps
+
+// function stressClicker() {
+//   setClicked(true);
+//   setClicks((clicks) => clicks + 1); //skips needing return
+//   // console.log(clicks);
+// }
+
+// const incrementClicker = useCallback(() => {
+//   //Emily suggested this, apparently it stops the increment functions from being re-rendered every time.
+//   setClicks((newClicks) => {
+//     const newTotal = newClicks + cps;
+//     return newTotal;
+//   });
+// }, [cps]);
+
+// function shopBuy(cost, increase) {
+//   if (clicks >= cost) {
+//     setClicks((newClicks) => newClicks - cost);
+//     setCps((newCps) => newCps + increase);
+//   }
+// }

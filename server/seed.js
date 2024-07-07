@@ -102,9 +102,9 @@ const insertDataIntoExpansions = async (
 //   92.0
 // );
 
-insertDataIntoExpansions(
-  "Dawntrail",
-  "2024-07-02",
-  "https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/Final_Fantasy_XIV_Dawntrail_box_cover.jpg/400px-Final_Fantasy_XIV_Dawntrail_box_cover.jpg",
-  0o0
-);
+// insertDataIntoExpansions(
+//   "Dawntrail",
+//   "2024-07-02",
+//   "https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/Final_Fantasy_XIV_Dawntrail_box_cover.jpg/400px-Final_Fantasy_XIV_Dawntrail_box_cover.jpg",
+//   0o0
+// );

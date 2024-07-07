@@ -26,6 +26,26 @@ app.get("/", (req, res) => {
   res.json({ message: "This is the root route." });
 });
 
+app.get("/userreviews", async (req, res) => {
+  const result = await db.query(`SELECT * FROM reviews`);
+
+  res.json(result.rows);
+});
+
+app.post("/postreview", async (req, res) => {
+  const { username, reviewText, rating, karma, expansionFk } = req.body;
+
+  try {
+    await db.query(
+      `INSERT INTO reviews (username, review_text, user_rating, karma, expansion_id) VALUES ($1, $2, $3, $4, $5)`,
+      [username, reviewText, rating, karma, expansionFk]
+    );
+  } catch (error) {
+    console.log("post failed, error");
+    res.status(500).json({ success: false });
+  }
+});
+
 // app.get("/", async function (req, res) {
 //   const result = await db.query(`SELECT name, calories FROM biscuits`);
 
