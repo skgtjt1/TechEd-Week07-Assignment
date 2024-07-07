@@ -38,7 +38,6 @@ export default function Form() {
 
   return (
     <>
-      <h1>Form</h1>
       {/* we add the handleSubmit to the form in an onSubmit event */}
       <form className="form" onSubmit={handleSubmit}>
         {/* our classic for attribute is now called htmlFor. They are the same thing */}

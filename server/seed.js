@@ -13,6 +13,14 @@
 //         CONSTRAINT "reviews_expansion_id_unique" UNIQUE ("expansion_id")
 //       );
 
+//       CREATE TABLE IF NOT EXISTS "expansions" (
+//         "id" SERIAL PRIMARY KEY,
+//         "exp_name" VARCHAR(255) NULL,
+//         "release_date" DATE,
+//         "image_url" TEXT,
+//         "meta_rating" FLOAT
+//       );
+
 //       ALTER TABLE "reviews"
 //       ADD CONSTRAINT "reviews_expansion_id_foreign"
 //       FOREIGN KEY ("expansion_id")

@@ -27,9 +27,23 @@ app.get("/", (req, res) => {
 });
 
 app.get("/userreviews", async (req, res) => {
-  const result = await db.query(`SELECT * FROM reviews`);
+  const result = await db.query(
+    `SELECT reviews.id, 
+  reviews.username, 
+  reviews.review_text, 
+  reviews.user_rating, 
+  expansions.exp_name,
+  expansions.image_url 
+FROM 
+  reviews 
+JOIN 
+  expansions 
+ON 
+  reviews.expansion_id = expansions.id;`
+  );
 
   res.json(result.rows);
+  console.log(result.rows);
 });
 
 app.post("/postreview", async (req, res) => {

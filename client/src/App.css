@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -44,4 +46,33 @@
 .form {
   display: flex;
   flex-direction: column;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.posts-div {
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #888;
+}
+
+.exp-image {
+  height: 200px;
+  width: auto;
+}
+
+.main-posts {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+h2 {
+  font-size: 1.5rem;
 }

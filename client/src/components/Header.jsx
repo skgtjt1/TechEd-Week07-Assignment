@@ -10,11 +10,12 @@ export default function Header() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/userreviews">Reviews</Link>
-          </li>
-          <li>
             <Link to="/formpage">Post your review</Link>
           </li>
+          <li>
+            <Link to="/userreviews">Reviews</Link>
+          </li>
+
           <li>
             <Link to="/">Expansion Info</Link>
           </li>

@@ -1,21 +1,43 @@
-//Here I will fetch the posts from the server which is geting the posts from the database
-
-// import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 export default function Posts() {
-  //we need state to save the values of posts
-  //we need useEffect to fetch the data
+  const [posts, setPosts] = useState([]);
 
-  // useEffect();
-  //we need a function to get the posts
-  //this function is async and uses fetch
-  //once you fetch the data, //! you will set the state variable to be the posts data
+  useEffect(() => {
+    async function fetchPosts() {
+      const response = await fetch("http://localhost:8080/userreviews", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
+      // console.log(data);
+      setPosts(data);
+    }
+    fetchPosts();
+  }, []);
 
-  //you can have a separate function to get the posts and call the function in the useEffect hook or you can write the function diretly inside the useEffect
   return (
     <>
-      Posts <img src="https://picsum.photos/200/300" alt="" />
+      <br />
+      <h2>User Reviews</h2>
+      <br />
+      <div className="main-posts">
+        {posts.map((item) => (
+          <div className="posts-div" key={item.id}>
+            <p>Username: {item.username}</p>
+            <p>Review: {item.review_text}</p>
+            <p>User Rating: {item.user_rating}</p>
+            <p>Expansion: {item.exp_name}</p>
+            <img
+              className="exp-image"
+              src={item.image_url}
+              alt={`Cover image for ${item.exp_name}`}
+            />
+          </div>
+        ))}
+      </div>
     </>
   );
-  //you could have a list of post titles and have the user click to see the full review
 }
