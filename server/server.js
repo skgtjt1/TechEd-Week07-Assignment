@@ -33,15 +33,16 @@ app.get("/userreviews", async (req, res) => {
 });
 
 app.post("/postreview", async (req, res) => {
-  const { username, reviewText, rating, karma, expansionFk } = req.body;
+  const { username, reviewText, userRating, expansion } = req.body;
 
   try {
     await db.query(
-      `INSERT INTO reviews (username, review_text, user_rating, karma, expansion_id) VALUES ($1, $2, $3, $4, $5)`,
-      [username, reviewText, rating, karma, expansionFk]
+      `INSERT INTO reviews (username, review_text, user_rating, expansion_id) VALUES ($1, $2, $3, $4)`,
+      [username, reviewText, userRating, expansion]
     );
   } catch (error) {
     console.log("post failed, error");
+    console.log(body);
     res.status(500).json({ success: false });
   }
 });

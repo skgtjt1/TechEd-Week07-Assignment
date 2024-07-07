@@ -1,4 +1,4 @@
-import { db } from "./server.js";
+// import { db } from "./server.js";
 
 // const seedDatabase = async () => {
 //   try {
@@ -11,14 +11,6 @@ import { db } from "./server.js";
 //         "karma" BIGINT,
 //         "expansion_id" INTEGER,
 //         CONSTRAINT "reviews_expansion_id_unique" UNIQUE ("expansion_id")
-//       );
-
-//       CREATE TABLE IF NOT EXISTS "expansions" (
-//         "id" SERIAL PRIMARY KEY,
-//         "exp_name" VARCHAR(255) NULL,
-//         "release_date" DATE,
-//         "image_url" TEXT,
-//         "meta_rating" FLOAT
 //       );
 
 //       ALTER TABLE "reviews"
@@ -36,29 +28,29 @@ import { db } from "./server.js";
 
 // seedDatabase();
 
-const insertDataIntoExpansions = async (
-  exp_name,
-  release_date,
-  image_url,
-  meta_rating
-) => {
-  const query = `
-      INSERT INTO "expansions" (
-        "exp_name",
-        "release_date",
-        "image_url",
-        "meta_rating"
-      ) VALUES ($1, $2, $3, $4);
-    `;
-  const values = [exp_name, release_date, image_url, meta_rating];
+// const insertDataIntoExpansions = async (
+//   exp_name,
+//   release_date,
+//   image_url,
+//   meta_rating
+// ) => {
+//   const query = `
+//       INSERT INTO "expansions" (
+//         "exp_name",
+//         "release_date",
+//         "image_url",
+//         "meta_rating"
+//       ) VALUES ($1, $2, $3, $4);
+//     `;
+//   const values = [exp_name, release_date, image_url, meta_rating];
 
-  try {
-    await db.query(query, values);
-    console.log("Data inserted into expansions successfully!");
-  } catch (err) {
-    console.error("Error inserting data into expansions:", err);
-  }
-};
+//   try {
+//     await db.query(query, values);
+//     console.log("Data inserted into expansions successfully!");
+//   } catch (err) {
+//     console.error("Error inserting data into expansions:", err);
+//   }
+// };
 
 // insertDataIntoExpansions(
 //   "Final Fantasy Online 1.0",
