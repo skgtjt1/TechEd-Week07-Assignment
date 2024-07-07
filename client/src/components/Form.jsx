@@ -21,11 +21,14 @@ export default function Form() {
     event.preventDefault();
     console.log("the form values are:", formValues);
 
-    const response = await fetch("http://localhost:8080/postreview", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formValues),
-    });
+    const response = await fetch(
+      "https://teched-week07-server.onrender.com/postreview",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formValues),
+      }
+    );
     const data = await response.json();
     console.log(data);
   }

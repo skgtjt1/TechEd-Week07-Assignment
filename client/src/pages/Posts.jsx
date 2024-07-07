@@ -5,12 +5,15 @@ export default function Posts() {
 
   useEffect(() => {
     async function fetchPosts() {
-      const response = await fetch("http://localhost:8080/userreviews", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://teched-week07-server.onrender.com/userreviews",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const data = await response.json();
       // console.log(data);
       setPosts(data);
