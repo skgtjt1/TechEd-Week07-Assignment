@@ -26,15 +26,29 @@ export default function Posts() {
       <div className="main-posts">
         {posts.map((item) => (
           <div className="posts-div" key={item.id}>
-            <p>Username: {item.username}</p>
-            <p>Review: {item.review_text}</p>
-            <p>User Rating: {item.user_rating}</p>
-            <p>Expansion: {item.exp_name}</p>
-            <img
-              className="exp-image"
-              src={item.image_url}
-              alt={`Cover image for ${item.exp_name}`}
-            />
+            <div className="left-posts">
+              <p>
+                <span className="titles">Username: </span> {item.username}
+              </p>
+              <p>
+                <span className="titles">Expansion:</span> {item.exp_name}
+              </p>
+              <p>
+                <span className="titles">Review: </span> <br />{" "}
+                {item.review_text}
+              </p>
+              <p>
+                <span className="titles">User Rating: </span>
+                {item.user_rating}
+              </p>
+            </div>
+            <div className="right-posts">
+              <img
+                className="exp-image"
+                src={item.image_url}
+                alt={`Cover image for ${item.exp_name}`}
+              />
+            </div>
           </div>
         ))}
       </div>

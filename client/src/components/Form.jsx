@@ -51,7 +51,6 @@ export default function Form() {
           //   we added the onChange event, so when the user types, the handleChange updates the value of the corresponding state variable
           onChange={handleInputChange}
         />
-
         <label htmlFor="expansion">Expansion</label>
         <select
           name="expansion"
@@ -81,8 +80,7 @@ export default function Form() {
           //   we added the onChange event, so when the user types, the handleChange updates the value of the corresponding state variable
           onChange={handleInputChange}
         />
-
-        <label htmlFor="user_rating">User Rating</label>
+        <label htmlFor="user_rating">User Rating (1-10)</label>
         <input
           type="number"
           name="userRating"
@@ -90,7 +88,7 @@ export default function Form() {
           required
           onChange={handleInputChange}
         />
-
+        <br />
         <button type="submit">Submit</button>
       </form>
     </>
