@@ -43,7 +43,7 @@ ON
   );
 
   res.json(result.rows);
-  console.log(result.rows);
+  // console.log(result.rows);
 });
 
 app.post("/postreview", async (req, res) => {

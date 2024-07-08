@@ -23,9 +23,8 @@ export default function Posts() {
 
   return (
     <>
-      <br />
       <h2>User Reviews</h2>
-      <br />
+
       <div className="main-posts">
         {posts.map((item) => (
           <div className="posts-div" key={item.id}>
