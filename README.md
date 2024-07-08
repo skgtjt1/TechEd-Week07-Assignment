@@ -10,7 +10,6 @@
 
 - 🐿️ As a user, I want to be able to create new posts and add them to the page
 - 🐿️ As a user, I want to be able to assign a category to each post
-
 - 🐿️ As a user, I want to be able to view all posts added on the page and the category they're in
 - 🐿️ As a user, I want to be able to view all posts in a specific category by visiting a dedicated page for that category (Stretch Goal)
 - 🐿️ As a user, I want to be able to add new categories (Stretch Goal)
@@ -45,9 +44,15 @@
 
 🎯 Please mention the requirements you met and which goals you achieved for this assignment.
 
+- I met all the standard requirements including server, react client with routing and a database.
+
 🎯 Were there any requirements or goals that you were not quite able to achieve?
 
+- I wanted to implement the stretch goals and have a full CRUD app, unfortunately once again my time was limited at the weekend. That's thankfully changing
+
 🎯 If so, could you please tell us what was it that you found difficult about these tasks?
+
+- I found it a little difficult to keep track of components and to implement useState and useEffect.
 
 ### (Optional)
 
@@ -56,6 +61,10 @@
 What went really well and what could have gone better?
 Detailing useful external sources that helped you complete the assignment (e.g Youtube tutorials).
 Describing errors or bugs you encountered while completing your assignment.
+
+- refreshing the page on any of the react "pages" like posts causes a "not found" error.
+
 Requesting feedback about a specific part of your submission.
 
 ![database schema](image.png)
+![Wireframe](image-1.png)
